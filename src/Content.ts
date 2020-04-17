@@ -2,6 +2,18 @@
 import http from "http";
 import url from "url";
 
+function osszead(a: number, b: number): number {
+    return a + b;
+}
+
+function faktrialis(n: number): number {
+    let fakt: number = 1;
+    for (let i: number = 2; i <= n; i++) {
+        fakt = fakt * i;
+    }
+    return fakt;
+}
+
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:
@@ -27,7 +39,7 @@ export default class Content {
 
         // Az  algoritmusokban  a  változók  a  megadott  típusú
         // értékek  (adatok)tárolására  használt memóriatartományok elnevezései.
-        // let x = 12; // változó definíció: let változóAzon = kezdőérték
+        // let x: number = 12; // változó definíció: let változóAzon = kezdőérték
         // x = 20;
         // res.write(`Az x változó érték: ${x}\n`);
         // res.write(`${x}\n`);
@@ -149,6 +161,40 @@ export default class Content {
                 if (c != 0) res.write("Ellentmondás !\n");
                 else res.write("Azonosság !\n");
             }
+        }
+
+        res.write("Függvény hívása\n");
+        let x1: number;
+        x1 = 4;
+        x1++; // vagy x1 = x1 + 1;
+        let x2: number;
+        x2 = 4;
+        x2--; // vagy x2 = x2 - 1;
+        const osszeg: number = osszead(x1, x2);
+        res.write(`${x1}+${x2}=${osszeg}\n`);
+
+        res.write("\nSzám faktoriálisa\n");
+        res.write("Kérem a számot: ");
+        let n: number = parseInt(params.n as string);
+        if (isNaN(n)) {
+            n = 5;
+        }
+        res.write(`<input type='text' name='n' value=${n} style='width:5em;' onChange='this.form.submit();'>\n`);
+        res.write(`${n}!=${faktrialis(n)}\n`);
+
+        // Tömbök - összetett adatszekezet, több adat tárolására alkalmas
+        res.write("\nTömbök\n");
+        // tömb definíció (típus, azonosító, kezdőértékek)
+        const nevek: string[] = ["Andi", "Anna", "Bence", "Laci"];
+        res.write(nevek[0] + "\n");
+        res.write(nevek[1] + "\n");
+        res.write(nevek[2] + "\n");
+        res.write(nevek[3] + "\n");
+        // res.write(nevek[4] + "\n"); // undefined
+
+        res.write("Visszafelé:\n");
+        for (let i: number = nevek.length - 1; i >= 0; i--) {
+            res.write(nevek[i] + "\n");
         }
 
         // <---- Fejezd be a kódolást
