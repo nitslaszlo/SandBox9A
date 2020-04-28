@@ -6,7 +6,7 @@ function osszead(a: number, b: number): number {
     return a + b;
 }
 
-function faktrialis(n: number): number {
+function faktorialis(n: number): number {
     let fakt: number = 1;
     for (let i: number = 2; i <= n; i++) {
         fakt = fakt * i;
@@ -180,7 +180,7 @@ export default class Content {
             n = 5;
         }
         res.write(`<input type='text' name='n' value=${n} style='width:5em;' onChange='this.form.submit();'>\n`);
-        res.write(`${n}!=${faktrialis(n)}\n`);
+        res.write(`${n}!=${faktorialis(n)}\n`);
 
         // Tömbök - összetett adatszekezet, több adat tárolására alkalmas
         res.write("\nTömbök\n");
@@ -215,7 +215,7 @@ export default class Content {
         res.write("\n");
 
         // for in ciklus ???
-        // a vektor (egy dimenziós tömb) elemeinek indexét vesz fel 0...Array.length-1
+        // a vektor (egy dimenziós tömb) elemeinek indexét veszi fel 0...Array.length-1
         // C# nyelven ilyen nincsm sim for ciklust használunk helyette
         for (const i in számok) {
             //res.write(`${i}; `);
@@ -231,6 +231,7 @@ export default class Content {
 
         // Kiírás a join() függvény használatával
         res.write(számok.join(". ") + "\n");
+        res.write(`${számok}\n`);
 
         // Szélsőérték keresés algoritmusa
         // Keressük a legnagyobb elem indexét és értékét
