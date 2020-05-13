@@ -50,7 +50,7 @@ export default class Content {
         // Gy1.: Készíts programot ami két input érték legkisebb közös többszörösét (LKKT) határozza meg és írja ki!
         // Az algoritmust a neten megtalálod!
 
-        // Gy2.: Kérjed be egy kör sugarát! Határozd meg a megadott sugarú kör kerületét és területét! (F6.-F7. függvények felhasználásával)
+        // Gy2.: Kérjed be egy kör sugarát! Határozd meg a megadott sugarú kör kerületét és területét! (F5.-F6. függvények felhasználásával)
 
         // <---- Fejezd be a kódolást
 
