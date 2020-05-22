@@ -1,6 +1,21 @@
 ﻿import fs from "fs";
 import http from "http";
 import url from "url";
+
+/*
+   F1: Készíts egy függvényt amely bekér egy számokból álló tömböt, majd visszaadja a számok
+   átlagát!
+ */
+function average(numbers: number[]): number {
+    //első körben kiszámoljuk a számok együttes összegét
+    let sum: number = 0;
+    for (const num of numbers) {
+        sum += num; //sum = sum + num
+    }
+
+    return sum / numbers.length;
+}
+
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:
@@ -23,6 +38,14 @@ export default class Content {
         const params = url.parse(req.url as string, true).query;
 
         // Kezd a kódolást innen -->
+        let numbers: number[] = [5, 5];
+        res.write(`average(5,5) = ${average(numbers)}\n`);
+
+        numbers = [10, 7];
+        res.write(`average(10, 7) = ${average(numbers)}\n`);
+
+        numbers = [23, 44, 55];
+        res.write(`average(23, 44, 55) = ${average(numbers)}`);
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form></body></html>");
