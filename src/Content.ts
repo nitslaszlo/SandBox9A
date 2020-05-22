@@ -61,8 +61,8 @@ function LKKT(sz1: number, sz2: number): number {
 // LKKT hagyományos algoritmus
 // a nagyobb szám olyan többszörösét keressük, melyet eloszt a kisebbik szám
 function LKKThagyomámnyos(a: number, b: number): number {
-    let nagyobbSzám;
-    let kisebbSzám;
+    let nagyobbSzám: number;
+    let kisebbSzám: number;
     if (a > b) {
         nagyobbSzám = a;
         kisebbSzám = b;
@@ -71,7 +71,7 @@ function LKKThagyomámnyos(a: number, b: number): number {
         kisebbSzám = a;
     }
     // Melyik nagyobb szám többszörösét osztja maradék nélkül a kisebbik szám
-    let többszörös = nagyobbSzám; // "első" többszörös = nagyobbszám
+    let többszörös: number = nagyobbSzám; // "első" többszörös = nagyobbszám
     // Melyik nagyobbszám többszörösét osztja a kisebbik szám?
     while (többszörös % kisebbSzám !== 0) {
         többszörös += nagyobbSzám; // nagyobb szám többszörösei
@@ -104,10 +104,10 @@ export default class Content {
 
         // Gy1.: Készíts programot ami két szám legkisebb közös többszörösét (LKKT) határozza meg és írja ki!
         // Az algoritmust a neten megtalálod!
-        res.write(`LNKO(12,20) = ${LNKO(12, 20)}\n`);
-        res.write(`LNKOrekurzív(12,20) = ${LNKOrekurzív(12, 20)}\n`);
-        res.write(`LKKT(7,13) = ${LKKT(7, 13)}\n`);
-        res.write(`LKKThagyományos(7,13) = ${LKKThagyomámnyos(7, 13)}\n`);
+        res.write(`LNKO(12, 20) = ${LNKO(12, 20)}\n`);
+        res.write(`LNKOrekurzív(12, 20) = ${LNKOrekurzív(12, 20)}\n`);
+        res.write(`LKKT(7, 13) = ${LKKT(7, 13)}\n`);
+        res.write(`LKKThagyományos(7, 13) = ${LKKThagyomámnyos(7, 13)}\n`);
 
         // String bejárása for-of ciklussal:
         for (const i of "alma") {
