@@ -1,28 +1,73 @@
 ﻿import fs from "fs";
 import http from "http";
 import url from "url";
+import { isUndefined } from "util";
 
-// F1.: Készíts függvényt, ami meghatározza (visszatér) egy szám számjegyeinek összegével! A számot paraméterben kapja a függvény!
+// F1.: Készíts függvényt, ami meghatározza (visszatér) egy természetes szám számjegyeinek összegével! A számot paraméterben kapja a függvény!
 // A függvényt teszteljed tetszőleges hívással!
+function számjegyekÖsszege(szám: number): number {
+    let összeg: number = 0;
+    for (const i of szám.toString()) {
+        // valós számoknál is helyesen működik
+        if (i !== ".") {
+            összeg = összeg + parseInt(i);
+        }
+    }
+    return összeg;
+}
 
 // F2.: Készíts függvényt, ami igaz értékkel tér vissza, ha egy számot maradék nélkül oszt el egy másik szám, hamissal ha nem osztja!
-// A számot és az osztót paraméterekben kapja a függvény!
+// A számot és az osztót formális paraméterekben kapja a függvény!
 // A függvényt teszteljed tetszőleges hívással!
+function oszthatóságEllenőrzése(osztandó: number, osztó: number): boolean {
+    return osztandó % osztó == 0;
+}
 
 // F3.: Készíts függvényt, ami meghatározza egy szám osztóinak a darabszámát!  A számot paraméterben kapja a függvény!
 // A függvényt teszteljed tetszőleges hívással!
+function osztókSzáma(szám: number): number {
+    let osztóDb: number = 0;
+    for (let osztó = 1; osztó <= szám; osztó++) {
+        if (szám % osztó === 0) osztóDb++;
+    }
+    return osztóDb;
+}
 
 // F4.: Készíts függvényt, ami igaz értékkel tér vissza, ha a szám prím, hamissal, ha nem prím! A számot paraméterben kapja a függvény!
 // A függvényt teszteljed tetszőleges hívással!
+function prímE(szám: number): boolean {
+    // if (szám % 1 !== 0) return false;
+    // if (!Number.isInteger(szám)) return false;
+    let osztóDb = 0;
+    for (let osztó = 1; osztó <= szám; osztó++) {
+        if (szám % osztó === 0) osztóDb++;
+    }
+    return osztóDb === 2;
+}
 
 // F5.: Készíts függvényt, amivel egy sugár paraméterből a kör kerületét tudod meghatározni!
 // Ha az r paraméter r <= 0, vagy r = NaN, vagy r = undefined, akkor NaN értékkel térjen vissza!
+function körKerület(r: number): number {
+    if (isNaN(r) || isUndefined(r) || r <= 0) {
+        return NaN;
+    }
+    return 2 * r * Math.PI;
+}
 
 // F6.: Készíts függvényt, amivel egy sugár paraméterből a kör területét tudod meghatározni!
 // Ha az r paraméter r <= 0, vagy r = NaN, vagy r = undefined, akkor NaN értékkel térjen vissza!
+function körTerület(r: number): number {
+    if (isNaN(r) || isUndefined(r) || r <= 0) {
+        return NaN;
+    }
+    return Math.pow(r, 2) * Math.PI;
+}
 
 // F7.: Készíts függvényt, ami az "ax +  b = 0" egyenlet gyökét (x) határozza meg! A függvény paraméterei az "a" és "b" értéke legyen!
 // A függvényt teszteljed tetszőleges hívással!
+function egyenletGyöke(a: number, b: number): number {
+    return -b / a;
+}
 
 // F8.: Készíts függvényt két szám legnagyobb közös osztójának (LNKO) meghatározására!
 // A függvény a két számot formális paraméteren keresztül kapja, visszatérési értéke LNKO(a,b)
@@ -110,7 +155,7 @@ export default class Content {
         res.write(`LKKThagyományos(7, 13) = ${LKKThagyomámnyos(7, 13)}\n`);
 
         // String bejárása for-of ciklussal:
-        for (const i of "alma") {
+        for (const i of "245234") {
             // az "i" itt sztring típusú (nincs char típus JS/TS-ben)
             res.write(`${i}\n`);
         }
@@ -121,7 +166,29 @@ export default class Content {
             res.write(`${szöveg[i]}\n`);
         }
 
+        res.write(`körKerület(10) = ${körKerület(10)}\n`);
+        res.write(`körTerület(10) = ${körTerület(10)}\n`);
+        res.write(`számjegyekÖsszege(123.456) = ${számjegyekÖsszege(123.456)}\n`);
+        res.write(`oszthatóságEllenőrzése(5, 2) = ${oszthatóságEllenőrzése(5, 2)}\n`);
+        res.write(`oszthatóságEllenőrzése(12, 4) = ${oszthatóságEllenőrzése(12, 4)}\n`);
+        res.write(`egyenletGyöke(3, 6) = ${egyenletGyöke(3, 6)}\n`);
+        res.write(`osztókSzáma(8) = ${osztókSzáma(8)}\n`);
+        res.write(`prímE(17) = ${prímE(17)}\n`);
+        res.write(`prímE(18) = ${prímE(18)}\n`);
+
         // Gy2.: Definiálj egy kör sugarát! Határozd meg a megadott sugarú kör kerületét és területét! (F5.-F6. függvények felhasználásával)
+        const sugár: number = 67.45;
+        res.write(`Az r=${sugár} kör területe és kerülete:\n`);
+        res.write(`Kerület = ${körKerület(sugár)}\n`);
+        res.write(`Terület = ${körTerület(sugár)}\n`);
+
+        // Gy3.: Írjad ki a kétjegyű prímszámokat!
+        res.write("A kétjegyű prímszámok:\n");
+        for (let i = 10; i <= 99; i++) {
+            if (prímE(i)) {
+                res.write(`${i}\n`);
+            }
+        }
 
         // <---- Fejezd be a kódolást
 
