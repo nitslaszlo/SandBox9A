@@ -12,6 +12,10 @@ import url from "url";
       Adja vissza a legrövidebb szót a tömbből!
  */
 
+/*
+   F3: Készíts egy függvényt ami fogad egy számot, és megmondja (true/false) hogy a szám egy egész számnak a négyzete-e.
+       Pl.: 1 -> true; 3 -> false; 4 -> true
+ */
 
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
@@ -35,7 +39,7 @@ export default class Content {
         const params = url.parse(req.url as string, true).query;
 
         // Kezd a kódolást innen -->
-        
+
         // <---- Fejezd be a kódolást
         res.write("</pre></form></body></html>");
         res.end();

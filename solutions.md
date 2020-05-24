@@ -53,5 +53,25 @@ function findShortest(words: string[]): string {
         res.write(`findShortest('Hello', 'Lion', 'Az') = ${findShortest(words)}\n`);
 
         words = ["Legrövidebb", "Megszencségteleníthetetlenségeskedéseitekért"];
-        res.write(`findShortest('Legrövidebb', 'Megszencségteleníthetetlenségeskedéseitekért') = ${findShortest(words)}`);
+        res.write(`findShortest('Legrövidebb', 'Megszencségteleníthetetlenségeskedéseitekért') = ${findShortest(words)}\n`);
+```
+
+### F3
+
+<b>A függvény:</b>
+
+```TS
+function isSquare(num: number) {
+    return Number.isInteger(Math.sqrt(num));
+}
+```
+
+<b>Tesztelés:</b>
+
+```TS
+        res.write(`isSquare(0) = ${isSquare(0)}\n`);
+        res.write(`isSquare(3) = ${isSquare(3)}\n`);
+        res.write(`isSquare(4) = ${isSquare(4)}\n`);
+        res.write(`isSquare(25) = ${isSquare(25)}\n`);
+        res.write(`isSquare(26) = ${isSquare(26)}\n`);
 ```
