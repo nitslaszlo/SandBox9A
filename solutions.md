@@ -115,3 +115,34 @@ function getRange(start: number, end: number): number[] {
         res.write(`getRange(10, 20) = ${getRange(10, 20)}\n`);
         res.write(`getRange(31, 20) = ${getRange(31, 20)}\n`);
 ```
+
+### F5
+
+<b>A függvény:</b>
+
+```TS
+function minMaxMultiplication(numbers: number[]): number {
+    let min: number = numbers[0];
+    let max: number = numbers[0];
+
+    for (const num of numbers) {
+        if (num < min) min = num;
+        if (num > max) max = num;
+    }
+
+    return min * max;
+}
+```
+
+<b>Tesztelés:</b>
+
+```TS
+        let numbers: number[] = [10, 12, 20, 14];
+        res.write(`minMaxMultiplication([10, 12, 20, 14]) = ${minMaxMultiplication(numbers)}\n`);
+
+        numbers = [1, 34, 10, -5];
+        res.write(`minMaxMultiplication([1, 34, 10, -5]) = ${minMaxMultiplication(numbers)}\n`);
+
+        numbers = [12, 1, 40, 23];
+        res.write(`minMaxMultiplication([12, 1, 40, 23]) = ${minMaxMultiplication(numbers)}\n`);
+```

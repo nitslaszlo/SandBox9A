@@ -26,6 +26,14 @@ import url from "url";
             (31, 20) -> [22, 24, 26, 28, 30];
 */
 
+/*
+   F5: Készíts egy függvényt amely fogad egy számokból álló tömböt, 
+       és visszaadja a tömbben megtalálható legkisebb és a legnagyobb szám szorzatát!
+       Pl.: ([10, 12, 20, 14]) -> 200 (mivel 10 * 20)
+            ([1, 34, 10, -5]) -> -170 (mivel -5 * 34)
+            ([12, 1, 40, 23]) -> 40 (mivel 1 * 40) 
+*/
+
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:
