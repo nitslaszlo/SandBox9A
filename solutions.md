@@ -61,7 +61,7 @@ function findShortest(words: string[]): string {
 <b>A függvény:</b>
 
 ```TS
-function isSquare(num: number) {
+function isSquare(num: number): boolean {
     return Number.isInteger(Math.sqrt(num));
 }
 ```
