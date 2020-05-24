@@ -18,9 +18,8 @@ import url from "url";
  */
 
 /*
-   F4: Készíts egy függvényt ami fogad két számot, és visszaadja az összes páros számot a nagyobbik és a kisebbik szám között
-       egy tömbben! Ha az első, paraméterként átadott szám nagyobb mint a második, 
-       akkor a második számot kezeld az első számként, és a másodikat elsőként.
+   F4: Készíts egy függvényt ami fogad két számot, és visszaadja az összes páros számot a kisebbik és a nagyobbik szám között
+       egy tömbben! 
        Pl.: (1, 10)  -> [2, 4, 6, 8]; 
             (10, 20) -> [12, 14, 16, 18]; 
             (31, 20) -> [22, 24, 26, 28, 30];
@@ -32,6 +31,15 @@ import url from "url";
        Pl.: ([10, 12, 20, 14]) -> 200 (mivel 10 * 20)
             ([1, 34, 10, -5]) -> -170 (mivel -5 * 34)
             ([12, 1, 40, 23]) -> 40 (mivel 1 * 40) 
+*/
+
+/*
+   F6: Készíts egy függvényt amely bekéri egy háromszög 3 oldalának hosszát és visszaadja (true/false), hogy
+       háromszög valóban szerkeszthető (a háromszög-egyenlőtlenség törvénye alapján).
+       Pl.: (1, 2, 2) -> true
+            (7, 2, 2) -> false
+            (1, 2, 3) -> false
+            (4, 2, 3) -> true
 */
 
 export default class Content {

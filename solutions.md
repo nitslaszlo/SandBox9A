@@ -19,14 +19,14 @@ function average(numbers: number[]): number {
 <b>Tesztelés:</b>
 
 ```TS
-        let numbers: number[] = [5, 5];
-        res.write(`average(5,5) = ${average(numbers)}\n`);
+    let numbers: number[] = [5, 5];
+    res.write(`average(5,5) = ${average(numbers)}\n`);
 
-        numbers = [10, 7];
-        res.write(`average(10, 7) = ${average(numbers)}\n`);
+    numbers = [10, 7];
+    res.write(`average(10, 7) = ${average(numbers)}\n`);
 
-        numbers = [23, 44, 55];
-        res.write(`average(23, 44, 55) = ${average(numbers)}`);
+    numbers = [23, 44, 55];
+    res.write(`average(23, 44, 55) = ${average(numbers)}`);
 ```
 
 ### F2
@@ -49,11 +49,11 @@ function findShortest(words: string[]): string {
 <b>Tesztelés:</b>
 
 ```TS
-        let words: string[] = ["Hello", "Lion", "Az"];
-        res.write(`findShortest('Hello', 'Lion', 'Az') = ${findShortest(words)}\n`);
+    let words: string[] = ["Hello", "Lion", "Az"];
+    res.write(`findShortest('Hello', 'Lion', 'Az') = ${findShortest(words)}\n`);
 
-        words = ["Legrövidebb", "Megszencségteleníthetetlenségeskedéseitekért"];
-        res.write(`findShortest('Legrövidebb', 'Megszencségteleníthetetlenségeskedéseitekért') = ${findShortest(words)}\n`);
+    words = ["Legrövidebb", "Megszencségteleníthetetlenségeskedéseitekért"];
+    res.write(`findShortest('Legrövidebb', 'Megszencségteleníthetetlenségeskedéseitekért') = ${findShortest(words)}\n`);
 ```
 
 ### F3
@@ -69,11 +69,11 @@ function isSquare(num: number): boolean {
 <b>Tesztelés:</b>
 
 ```TS
-        res.write(`isSquare(0) = ${isSquare(0)}\n`);
-        res.write(`isSquare(3) = ${isSquare(3)}\n`);
-        res.write(`isSquare(4) = ${isSquare(4)}\n`);
-        res.write(`isSquare(25) = ${isSquare(25)}\n`);
-        res.write(`isSquare(26) = ${isSquare(26)}\n`);
+    res.write(`isSquare(0) = ${isSquare(0)}\n`);
+    res.write(`isSquare(3) = ${isSquare(3)}\n`);
+    res.write(`isSquare(4) = ${isSquare(4)}\n`);
+    res.write(`isSquare(25) = ${isSquare(25)}\n`);
+    res.write(`isSquare(26) = ${isSquare(26)}\n`);
 ```
 
 ### F4
@@ -111,9 +111,9 @@ function getRange(start: number, end: number): number[] {
 <b>Tesztelés:</b>
 
 ```TS
-        res.write(`getRange(1, 10) = ${getRange(1, 10)}\n`);
-        res.write(`getRange(10, 20) = ${getRange(10, 20)}\n`);
-        res.write(`getRange(31, 20) = ${getRange(31, 20)}\n`);
+    res.write(`getRange(1, 10) = ${getRange(1, 10)}\n`);
+    res.write(`getRange(10, 20) = ${getRange(10, 20)}\n`);
+    res.write(`getRange(31, 20) = ${getRange(31, 20)}\n`);
 ```
 
 ### F5
@@ -137,12 +137,31 @@ function minMaxMultiplication(numbers: number[]): number {
 <b>Tesztelés:</b>
 
 ```TS
-        let numbers: number[] = [10, 12, 20, 14];
-        res.write(`minMaxMultiplication([10, 12, 20, 14]) = ${minMaxMultiplication(numbers)}\n`);
+    let numbers: number[] = [10, 12, 20, 14];
+    res.write(`minMaxMultiplication([10, 12, 20, 14]) = ${minMaxMultiplication(numbers)}\n`);
 
-        numbers = [1, 34, 10, -5];
-        res.write(`minMaxMultiplication([1, 34, 10, -5]) = ${minMaxMultiplication(numbers)}\n`);
+    numbers = [1, 34, 10, -5];
+    res.write(`minMaxMultiplication([1, 34, 10, -5]) = ${minMaxMultiplication(numbers)}\n`);
 
-        numbers = [12, 1, 40, 23];
-        res.write(`minMaxMultiplication([12, 1, 40, 23]) = ${minMaxMultiplication(numbers)}\n`);
+    numbers = [12, 1, 40, 23];
+    res.write(`minMaxMultiplication([12, 1, 40, 23]) = ${minMaxMultiplication(numbers)}\n`);
+```
+
+### F6
+
+<b>A függvény:</b>
+
+```TS
+function isValidTriangle(a: number, b: number, c: number): boolean {
+    return a + b > c && a + c > b && c + b > a;
+}
+```
+
+<b>Tesztelés:</b>
+
+```TS
+    res.write(`isValidTriangle(1, 2, 2) = ${isValidTriangle(1, 2, 2)}\n`);
+    res.write(`isValidTriangle(7, 2, 2) = ${isValidTriangle(7, 2, 2)}\n`);
+    res.write(`isValidTriangle(1, 2, 3) = ${isValidTriangle(1, 2, 3)}\n`);
+    res.write(`isValidTriangle(4, 2, 3) = ${isValidTriangle(4, 2, 3)}\n`);
 ```
