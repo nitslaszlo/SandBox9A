@@ -75,3 +75,43 @@ function isSquare(num: number): boolean {
         res.write(`isSquare(25) = ${isSquare(25)}\n`);
         res.write(`isSquare(26) = ${isSquare(26)}\n`);
 ```
+
+### F4
+
+<b>A függvény(ek):</b>
+
+```TS
+/**
+ * 'Segédfüggvény', visszaadja hogy egy szám páros-e
+ */
+function isEven(num: number): boolean {
+    return num % 2 == 0;
+}
+
+function getRange(start: number, end: number): number[] {
+    if (start > end) {
+        const temp: number = end;
+        end = start;
+        start = temp;
+    }
+
+    const range: number[] = [];
+
+    let k: number = 0;
+    for (let i = start + 1; i < end; i++) {
+        if (isEven(i)) {
+            range[k++] = i;
+        }
+    }
+
+    return range;
+}
+```
+
+<b>Tesztelés:</b>
+
+```TS
+        res.write(`getRange(1, 10) = ${getRange(1, 10)}\n`);
+        res.write(`getRange(10, 20) = ${getRange(10, 20)}\n`);
+        res.write(`getRange(31, 20) = ${getRange(31, 20)}\n`);
+```

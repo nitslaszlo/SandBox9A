@@ -17,6 +17,15 @@ import url from "url";
        Pl.: 1 -> true; 3 -> false; 4 -> true
  */
 
+/*
+   F4: Készíts egy függvényt ami fogad két számot, és visszaadja az összes páros számot a nagyobbik és a kisebbik szám között
+       egy tömbben! Ha az első, paraméterként átadott szám nagyobb mint a második, 
+       akkor a második számot kezeld az első számként, és a másodikat elsőként.
+       Pl.: (1, 10)  -> [2, 4, 6, 8]; 
+            (10, 20) -> [12, 14, 16, 18]; 
+            (31, 20) -> [22, 24, 26, 28, 30];
+*/
+
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:
