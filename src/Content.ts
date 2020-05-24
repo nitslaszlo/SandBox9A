@@ -7,6 +7,12 @@ import url from "url";
    átlagát!
  */
 
+/*
+  F2: Készíts egy függvényt ami fogad egy String típusú elemekből álló tömböt!
+      Adja vissza a legrövidebb szót a tömbből!
+ */
+
+
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:
@@ -29,8 +35,8 @@ export default class Content {
         const params = url.parse(req.url as string, true).query;
 
         // Kezd a kódolást innen -->
+        
         // <---- Fejezd be a kódolást
-
         res.write("</pre></form></body></html>");
         res.end();
     }

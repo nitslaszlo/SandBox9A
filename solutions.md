@@ -28,3 +28,30 @@ function average(numbers: number[]): number {
         numbers = [23, 44, 55];
         res.write(`average(23, 44, 55) = ${average(numbers)}`);
 ```
+
+### F2
+
+<b>A függvény:</b>
+
+```TS
+function findShortest(words: string[]): string {
+    let shortest: string = words[0];
+    for (const word of words) {
+        if (word.length < shortest.length) {
+            shortest = word;
+        }
+    }
+
+    return shortest;
+}
+```
+
+<b>Tesztelés:</b>
+
+```TS
+        let words: string[] = ["Hello", "Lion", "Az"];
+        res.write(`findShortest('Hello', 'Lion', 'Az') = ${findShortest(words)}\n`);
+
+        words = ["Legrövidebb", "Megszencségteleníthetetlenségeskedéseitekért"];
+        res.write(`findShortest('Legrövidebb', 'Megszencségteleníthetetlenségeskedéseitekért') = ${findShortest(words)}`);
+```
