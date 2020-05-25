@@ -36,5 +36,9 @@
     },
     "spellright.notificationClass": "information",
     "spellright.language": ["en", "hu"],
-    "spellright.documentTypes": ["latex", "plaintext"]
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext"
+    ],
+    "python.pythonPath": "C:\\Users\\judal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
 }

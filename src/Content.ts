@@ -43,7 +43,7 @@ import url from "url";
 */
 
 /*
-   F7: Készíts egy függvényt amely bekér egy szöveget, és visszaadja annak a megfordított változatát!
+   F7: Készíts egy függvényt amely bekér egy stringet, és visszaadja annak a megfordított változatát!
        Pl.: ("Alma") -> amlA
  */
 
@@ -69,7 +69,6 @@ export default class Content {
         const params = url.parse(req.url as string, true).query;
 
         // Kezd a kódolást innen -->
-
         // <---- Fejezd be a kódolást
         res.write("</pre></form></body></html>");
         res.end();
