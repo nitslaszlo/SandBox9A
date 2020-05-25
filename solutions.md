@@ -97,10 +97,9 @@ function getRange(start: number, end: number): number[] {
 
     const range: number[] = [];
 
-    let k: number = 0;
     for (let i = start + 1; i < end; i++) {
         if (isEven(i)) {
-            range[k++] = i;
+            range[range.length] = i;
         }
     }
 

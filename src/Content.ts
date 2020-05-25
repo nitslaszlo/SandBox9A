@@ -77,7 +77,6 @@ export default class Content {
         const params = url.parse(req.url as string, true).query;
 
         // Kezd a kódolást innen -->
-
         // <---- Fejezd be a kódolást
         res.write("</pre></form></body></html>");
         res.end();
