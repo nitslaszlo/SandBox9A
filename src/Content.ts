@@ -47,6 +47,14 @@ import url from "url";
        Pl.: ("Alma") -> amlA
  */
 
+/*
+   F8: Készíts egy függvényt ami fogad egy stringet, és visszaadja egy olyan változatát amiben minden karakter
+       meg van duplázva!
+       Pl.: ("Hello") -> "HHeellllo"
+            ("May") -> MMaayy
+            ("hi") -> hhii  
+*/
+
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:
@@ -69,6 +77,7 @@ export default class Content {
         const params = url.parse(req.url as string, true).query;
 
         // Kezd a kódolást innen -->
+
         // <---- Fejezd be a kódolást
         res.write("</pre></form></body></html>");
         res.end();

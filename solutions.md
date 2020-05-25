@@ -187,3 +187,26 @@ function reverseString(text: string): string {
     res.write(`reverseString('Alma') = ${reverseString("Alma")}\n`);
     res.write(`reverseString('Megszencségteleníthetetlenségeskedéseitekért') = ${reverseString("Megszencségteleníthetetlenségeskedéseitekért")}\n`);
 ```
+
+### F8
+
+<b>A függvény:</b>
+
+```TS
+function duplicateChars(text: string): string {
+    let result: string = "";
+    for (const char of text) {
+        result += char.repeat(2); //result = result + char.repeat(2)
+    }
+
+    return result;
+}
+```
+
+<b>Tesztelés:</b>
+
+```TS
+    res.write(`duplicateChars('hi') = ${duplicateChars("hi")}\n`);
+    res.write(`duplicateChars('The') = ${duplicateChars("The")}\n`);
+    res.write(`duplicateChars('Hi-There') = ${duplicateChars("Hi-There")}\n`);
+```
