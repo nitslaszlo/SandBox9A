@@ -42,6 +42,11 @@ import url from "url";
             (4, 2, 3) -> true
 */
 
+/*
+   F7: Készíts egy függvényt amely bekér egy szöveget, és visszaadja annak a megfordított változatát!
+       Pl.: ("Alma") -> amlA
+ */
+
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:

@@ -165,3 +165,25 @@ function isValidTriangle(a: number, b: number, c: number): boolean {
     res.write(`isValidTriangle(1, 2, 3) = ${isValidTriangle(1, 2, 3)}\n`);
     res.write(`isValidTriangle(4, 2, 3) = ${isValidTriangle(4, 2, 3)}\n`);
 ```
+
+### F7
+
+<b>A függvény:</b>
+
+```TS
+function reverseString(text: string): string {
+    let reversed: string = "";
+    for (let i = text.length - 1; i >= 0; i--) {
+        reversed += text[i];
+    }
+
+    return reversed;
+}
+```
+
+<b>Tesztelés:</b>
+
+```TS
+    res.write(`reverseString('Alma') = ${reverseString("Alma")}\n`);
+    res.write(`reverseString('Megszencségteleníthetetlenségeskedéseitekért') = ${reverseString("Megszencségteleníthetetlenségeskedéseitekért")}\n`);
+```
