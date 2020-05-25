@@ -50,7 +50,7 @@ import url from "url";
 /*
    F8: Készíts egy függvényt ami fogad egy stringet, és visszaadja egy olyan változatát amiben minden karakter
        meg van duplázva!
-       Pl.: ("Hello") -> "HHeellllo"
+       Pl.: ("Hello") -> "HHeelllloo"
             ("May") -> MMaayy
             ("hi") -> hhii  
 */
