@@ -25,6 +25,13 @@ export default class Content {
 
         // Kezd a kódolást innen -->
 
+        //F1---> Cenzúra program, függvény mely paraméterben kapja meg a cenzúrázni kívánt programot, a kicenzúrázadnó szót, és azt a szót amire ki szeretnénk cserélni.
+        //Segítség: A szó kicserélését a stringeket a .replace() -val lehet cserélni.
+
+        const text: string = "A(z) emberek szeretnek barátkozni más emberek társaságában. ";
+        const wordToChange: string = "emberek";
+        const newWord = "élőlények";
+
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form></body></html>");
