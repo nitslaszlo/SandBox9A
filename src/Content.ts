@@ -30,7 +30,7 @@ export default class Content {
 
         const text: string = "A(z) emberek szeretnek barátkozni más emberek társaságában. ";
         const wordToChange: string = "emberek";
-        const newWord = "élőlények";
+        const newWord: string = "élőlények";
 
         // <---- Fejezd be a kódolást
 
