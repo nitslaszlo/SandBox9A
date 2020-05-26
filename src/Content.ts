@@ -25,12 +25,10 @@ export default class Content {
 
         // Kezd a kódolást innen -->
 
-        //F1---> Cenzúra program, függvény mely paraméterben kapja meg a cenzúrázni kívánt programot, a kicenzúrázadnó szót, és azt a szót amire ki szeretnénk cserélni.
-        //Segítség: A szó kicserélését a stringeket a .replace() -val lehet cserélni.
+        //F1---> Cenzúra program, függvény mely paraméterben kapja meg a cenzúrázni kívánt mondatot, a kicenzúrázadnó szót, és azt a szót amire ki szeretnénk cserélni.
+        //Segítség: A kicserélését a stringeknek a .replace() -val lehet megoldani.
 
-        const text: string = "A(z) emberek szeretnek barátkozni más emberek társaságában. ";
-        const wordToChange: string = "emberek";
-        const newWord: string = "élőlények";
+        //F2 ---> Készíts egy programot, mely pozitív egész számok gyökét számolja és ha a gyök nem egész, kerekítse 2 tizedesjegyre. Teszteld a működését!
 
         // <---- Fejezd be a kódolást
 
