@@ -1,6 +1,7 @@
 ﻿import fs from "fs";
 import http from "http";
 import url from "url";
+import { isUndefined } from "util";
 
 // Feladatok
 // 1. feladat: Készítsen függvényt, amely paraméterként 3 értéket kap:
@@ -35,7 +36,13 @@ function kamatosKamat(tőke: number, kamatláb: number, futamidő: number): numb
 // Pl. 2.: RészSztring("szőlőfürt", 5, 10) -> "fürt"
 
 function részSztring(szöveg: string, pozíció: number, darab: number): string {
-    return szöveg.substr(pozíció, darab);
+    // return szöveg.substring(pozíció, pozíció + darab);
+    // return szöveg.substr(pozíció, darab);
+    let részStr: string = "";
+    for (let i = pozíció; i < pozíció + darab; i++) {
+        részStr += isUndefined(szöveg[i]) ? "" : szöveg[i];
+    }
+    return részStr;
 }
 
 // 4. feladat: Készítsen függvényt, amely a paraméterben (km/h-ban) megadott sebesség értéket,
