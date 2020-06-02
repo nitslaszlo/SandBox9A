@@ -3,21 +3,61 @@ import http from "http";
 import url from "url";
 
 // Feladatok
+// 1. feladat: Készítsen függvényt, amely paraméterként 3 értéket kap:
+// egy számtani sorozat első elemét, differenciáját és a kívánt elem sorszámát!
+// A függvény térjen vissza a kívánt elem értékével!
+// Pl. Sorozat(1,5,3) -> az első elem 1, a különbség 5, akkor a 3. elem értéke: 11
+// A függvény működését tesztelje is le tetszőleges paraméterekkel!
 
-//Minden függvény működését tesztelje is le tetszőleges paraméterekkel!
+function számtaniSorozat(első: number, diff: number, sorszám: number): number {
+    // let visszaElem: number = első;
+    // for (let i = 2; i <= sorszám; i++) {
+    //     visszaElem = visszaElem + diff;
+    // }
+    // return visszaElem;
+    return első + (sorszám - 1) * diff;
+}
 
-// F1.: Írjon függvényt, amely paraméterben kapja egy háromszög 3 oldalát és visszaadja annak kerületét!
-// F2.: Írjon függvényt, amely paraméterben kapja egy háromszög 3 oldalát és visszaadja annak területét! (Ehhez nézzen utána a Héron-képletnek!)
-// F3.: Írjon függvényt, amely paraméterben egy számokat tartalmazó vektort kap és visszaadja a számok átlagát!
-// F4.: Írjon függvényt, amely paraméterben egy számokat tartalmazó vektort kap és logikai értékkel (boolean) tér vissza, amely true ha van a számok között negatív szám és false ha nincs!
-// F5.: Írjon függvényt, amely paraméterben egy sztingeket tartalmazó vektort kap, és kiírja a vektor elemeit egymás alá!
-// F6.: Írjon függvényt, amely paraméterben két téglalap a és b oldálát kapja, és true értékkel tér vissza ha a két téglalap hasonló, false-szal ha nem! (Két téglalap hasonló, ha az oldalaik aránya egyenlő.)
+// 2. feladat: Készítsen függvényt, amely a paraméterben megadott tőke, kamatláb és futamidő
+// ismeretében kiszámítja a kamatos kamat értékét!
+// kamatos_kamat =  tőke * (1 + kamatláb/100)^futamidő   ahol, a ^ - hatványozás jele
 
-// F7.: Írjon függvényt, amely paraméterben kap egy sztringet, és egy karaktert, és visszaadja a sztringben lévő karakterek számát!
-// F8.: Írjon függvényt, amely paraméterben kap két számot és visszaadja a két szám mértani közepét!
-// F9.: Írjon függvényt, amely paraméterben kapja egy derékszögű háromszög két befogóját és visszaadja az átfogóját!
-// F10.: Írjon függvényt, amely egy paraméterben kapott számot eloszt 2-vel annyiszor, ahányszor lehet és közben kiírja a számot a kettes számok szorzataként megszorozva egy olyan számmal, amely már nem osztható 2-vel. Pl.: 120 = 2*2*2*15. A függvény ne adjon vissza semmit!
+function kamatosKamat(tőke: number, kamatláb: number, futamidő: number): number {
+    return tőke * Math.pow(1 + kamatláb / 100, futamidő);
+}
 
+// 3. feladat: Készítsen függvényt, amely paraméterben kap egy szöveget és két számot!
+// A függvény adja vissza a megadott szöveg részletét az első számban megadott pozíciótol kezdve,
+// a második számban megadott darab karaktert.
+// Ha a nincs annyi karakter mint amekkora a második szám,
+// akkor a sztringet az utolsó karateréig adja vissza.
+// Pl. 1.: RészSztring("szőlőfürt", 2, 4) -> "őlőf"
+// Pl. 2.: RészSztring("szőlőfürt", 5, 10) -> "fürt"
+
+function részSztring(szöveg: string, pozíció: number, darab: number): string {
+    return szöveg.substr(pozíció, darab);
+}
+
+// 4. feladat: Készítsen függvényt, amely a paraméterben (km/h-ban) megadott sebesség értéket,
+// átváltja a második paraméterben megadott értéktől függően, az alábbiak szerint!
+// Ha a második paraméter...
+//  - 1, akkor m/s-ra (váltószám: 3.6)
+//  - 2, akkor mérföld/órára (váltószám: 1.609)
+//  - 3, akkor csomóra (váltószám: 1.852)
+// Bármilyen más második paraméter esetén -1-et adjon vissza!
+
+function átváltSebesség(sebességKmh: number, mibe: number): number {
+    switch (mibe) {
+        case 1:
+            return sebességKmh / 3.6;
+        case 2:
+            return sebességKmh / 1.609;
+        case 3:
+            return sebességKmh / 1.852;
+        default:
+            return -1;
+    }
+}
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
         // favicon.ico kérés kiszolgálása:
@@ -40,6 +80,20 @@ export default class Content {
         const params = url.parse(req.url as string, true).query;
 
         // Kezd a kódolást innen -->
+        res.write(`számtaniSorozat(1, 5, 3) = ${számtaniSorozat(1, 5, 3)}\n`);
+        res.write(`számtaniSorozat(1, 5, 1) = ${számtaniSorozat(1, 5, 1)}\n`);
+        res.write(`számtaniSorozat(3, 4, 5) = ${számtaniSorozat(3, 4, 5)}\n`);
+
+        res.write(`kamatosKamat(100, 10, 5) = ${kamatosKamat(100, 10, 5)}\n`);
+
+        res.write(`részSztring("szőlőfürt", 2, 4) = ${részSztring("szőlőfürt", 2, 4)}\n`);
+
+        res.write(`részSztring("szőlőfürt", 5, 10) = ${részSztring("szőlőfürt", 5, 10)}\n`);
+
+        res.write(`átváltSebesség(100, 1) = ${átváltSebesség(100, 1)}\n`);
+        res.write(`átváltSebesség(100, 2) = ${átváltSebesség(100, 2)}\n`);
+        res.write(`átváltSebesség(100, 3) = ${átváltSebesség(100, 3)}\n`);
+        res.write(`átváltSebesség(100, 4) = ${átváltSebesség(100, 4)}\n`);
 
         // <---- Fejezd be a kódolást
 
